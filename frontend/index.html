@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login dengan Google menggunakan CrootJS dan Golang Backend">
+    <title>Google Sign-In | CrootJS Auth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+        <div class="spinner-text">Memverifikasi akun Google...</div>
+    </div>
+
+    <div id="notification-container"></div>
+
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-icon">🔐</div>
+            <h1 class="login-title">Selamat Datang</h1>
+            <p class="login-subtitle">Masuk dengan akun Google Anda untuk melanjutkan</p>
+
+            <div class="divider"><span>Sign In</span></div>
+
+            <div class="google-btn-wrapper">
+                <div id="g_id_onload"
+                     data-client_id="994808628494-qmgmj3vmrl0evvmnnbd66mnvpooa3na4.apps.googleusercontent.com"
+                     data-context="signin"
+                     data-ux_mode="popup"
+                     data-callback="handleCredentialResponse"
+                     data-auto_prompt="false"></div>
+                <div class="g_id_signin"
+                     data-type="standard"
+                     data-shape="rectangular"
+                     data-theme="filled_black"
+                     data-text="signin_with"
+                     data-size="large"
+                     data-logo_alignment="left"
+                     data-width="320"></div>
+            </div>
+
+            <div class="login-info">
+                <p>Dengan masuk, Anda menyetujui<br>
+                <a href="#">Ketentuan Layanan</a> &amp; <a href="#">Kebijakan Privasi</a></p>
+            </div>
+
+            <div class="tech-badges">
+                <span class="tech-badge">⚡ CrootJS</span>
+                <span class="tech-badge">🔷 Golang</span>
+                <span class="tech-badge">🔒 OAuth 2.0</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Built with CrootJS &amp; Golang • Google OAuth 2.0</p>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
