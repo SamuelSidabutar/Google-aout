@@ -43,8 +43,8 @@ func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/api/auth/google", handleGoogleAuth)
 
-	// Serve frontend static files dari folder "frontend"
-	fs := http.FileServer(http.Dir("frontend"))
+	// Serve frontend static files dari root directory
+	fs := http.FileServer(http.Dir("."))
 	mux.Handle("/", fs)
 
 	handler := corsMiddleware(mux)
